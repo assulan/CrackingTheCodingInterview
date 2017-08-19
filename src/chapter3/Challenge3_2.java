@@ -1,12 +1,12 @@
 package chapter3;
 
-import java.util.*;
-
 /**
  * Created by Assulan on 4/29/2017.
  * Stack that has min operations that returns smallest value.
- * All operations should be O(n).
+ * All operations should be O(1).
  */
+import java.util.Stack;
+
 class NodeWithMin{
     public int value;
     public int min;
@@ -29,10 +29,48 @@ class StackWithMin extends java.util.Stack<NodeWithMin>{
     }
 }
 
+class StackWithMin2 extends Stack<Integer> {
+    private Stack<Integer> minStack;
+
+    public StackWithMin2(){
+        minStack = new Stack<Integer>();
+    }
+
+    public void push(int value){
+        if (value < min()){
+            minStack.push(value);
+        }
+        super.push(value);
+    }
+
+    public Integer pop(){
+        int value = super.pop();
+        if (value == min()){
+            minStack.pop();
+        }
+        return value;
+    }
+
+    public int min(){
+        if (minStack.isEmpty()){
+            return Integer.MAX_VALUE;
+        }
+        return (int) minStack.peek();
+    }
+
+}
+
 public class Challenge3_2 {
 
     public static void main(String[] args){
-        StackWithMin stackWithMin = new StackWithMin();
+//        StackWithMin stackWithMin = new StackWithMin();
+//        stackWithMin.push(5);
+//        stackWithMin.push(4);
+//        stackWithMin.push(7);
+//        stackWithMin.pop();
+//        System.out.println(stackWithMin.min());
+
+        StackWithMin2 stackWithMin = new StackWithMin2();
         stackWithMin.push(5);
         stackWithMin.push(4);
         stackWithMin.push(7);

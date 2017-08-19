@@ -1,8 +1,7 @@
 package chapter2;
 
-import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
 
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Node;
+import java.util.Hashtable;
 
 /**
  * Created by Assulan on 4/23/2017.
