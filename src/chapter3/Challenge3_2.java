@@ -1,10 +1,10 @@
-package chapter3;
-
 /**
  * Created by Assulan on 4/29/2017.
  * Stack that has min operations that returns smallest value.
  * All operations should be O(1).
  */
+
+package chapter3;
 import java.util.Stack;
 
 class NodeWithMin{
